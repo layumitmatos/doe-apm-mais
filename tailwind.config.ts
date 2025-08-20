@@ -61,6 +61,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// DOE APM specific colors
+				apm: {
+					navy: 'hsl(var(--apm-navy))',
+					'light-blue': 'hsl(var(--apm-light-blue))',
+					'light-gray': 'hsl(var(--apm-light-gray))',
+					'donation-green': 'hsl(var(--apm-donation-green))',
+					'deposit-blue': 'hsl(var(--apm-deposit-blue))'
 				}
 			},
 			borderRadius: {
