@@ -1,5 +1,6 @@
 import { Slideshow } from "@/components/Slideshow";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { School, Users, Heart, Target } from "lucide-react";
 
 export default function Home() {
@@ -23,6 +24,22 @@ export default function Home() {
           <p className="text-muted-foreground">
             Associação de Pais e Mestres - Transformando a educação juntos
           </p>
+        </div>
+
+        {/* Admin Access Button */}
+        <div className="mb-6">
+          <Card className="border-primary/20 bg-gradient-to-r from-primary/5 to-secondary/10">
+            <CardContent className="p-4">
+              <Button 
+                onClick={() => window.location.href = '/admin/auth'}
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                size="lg"
+              >
+                <Users className="w-5 h-5 mr-2" />
+                Sou membro da APM
+              </Button>
+            </CardContent>
+          </Card>
         </div>
 
         <div className="grid gap-4">
