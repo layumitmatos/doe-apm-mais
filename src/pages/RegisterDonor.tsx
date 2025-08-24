@@ -3,7 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { School, ArrowLeft, UserPlus } from "lucide-react";
+import { ArrowLeft, UserPlus } from "lucide-react";
+import logoImage from "@/assets/logo.png";
 import { useNavigate } from 'react-router-dom';
 import { useToast } from "@/hooks/use-toast";
 
@@ -48,7 +49,7 @@ export default function RegisterDonor() {
           </Button>
           
           <div className="flex items-center">
-            <School className="w-6 h-6 mr-2" />
+            <img src={logoImage} alt="DOE APM Logo" className="h-8 w-auto mr-2" />
             <h1 className="text-xl font-bold">Cadastrar Doador</h1>
           </div>
         </div>

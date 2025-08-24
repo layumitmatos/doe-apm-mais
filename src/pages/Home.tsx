@@ -1,110 +1,164 @@
 import { Slideshow } from "@/components/Slideshow";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { School, Users, Heart, Target } from "lucide-react";
+import { School, Users, Heart, Target, Mail, Phone } from "lucide-react";
+import appImage from "@/assets/app.png";
+import logoImage from "@/assets/logo.png";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background pb-20">
+    <div className="min-h-screen bg-gradient-to-br from-apm-light-blue to-white">
       {/* Header */}
-      <div className="bg-primary text-primary-foreground p-4">
-        <div className="flex items-center justify-center mb-4">
-          <School className="w-8 h-8 mr-3" />
-          <h1 className="text-3xl font-bold">DOE APM</h1>
+      <header className="bg-white shadow-sm py-4 px-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <img src={logoImage} alt="DOE APM Logo" className="h-12 w-auto" />
+          <Button 
+            onClick={() => window.location.href = '/admin/auth'}
+            className="bg-apm-primary hover:bg-apm-primary/90 text-white px-6 py-2"
+          >
+            <Users className="w-4 h-4 mr-2" />
+            Sou membro da APM
+          </Button>
         </div>
-        <Slideshow />
-      </div>
+      </header>
 
-      {/* Content */}
-      <div className="p-4 space-y-6">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-foreground mb-2">
-            Bem-vindo à nossa APM
-          </h2>
-          <p className="text-muted-foreground">
-            Associação de Pais e Mestres - Transformando a educação juntos
-          </p>
-        </div>
-
-        {/* Admin Access Button */}
-        <div className="mb-6">
-          <Card className="border-primary/20 bg-gradient-to-r from-primary/5 to-secondary/10">
-            <CardContent className="p-4">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-apm-light-blue to-apm-primary/20 py-20">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <h1 className="text-5xl font-bold text-foreground leading-tight">
+              Bem-vindo à nossa APM
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              Associação de Pais e Mestres - Transformando a educação juntos
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                onClick={() => window.location.href = '/admin/auth'}
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                size="lg"
+                size="lg" 
+                className="bg-apm-primary hover:bg-apm-primary/90 text-white px-8 py-3"
+                onClick={() => window.location.href = '/login'}
               >
-                <Users className="w-5 h-5 mr-2" />
+                Fazer Login
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-apm-primary text-apm-primary hover:bg-apm-primary/10 px-8 py-3"
+                onClick={() => window.location.href = '/admin/auth'}
+              >
+                <Users className="w-4 h-4 mr-2" />
                 Sou membro da APM
               </Button>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+              <Slideshow />
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="grid gap-4">
-          <Card>
-            <CardHeader className="pb-3">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Users className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <CardTitle className="text-lg">O que é a APM?</CardTitle>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-sm leading-relaxed">
-                A Associação de Pais e Mestres é uma organização que une famílias e educadores 
-                para melhorar a qualidade da educação em nossa escola. Trabalhamos juntos para 
-                proporcionar um ambiente de aprendizado ainda melhor para nossos alunos.
-              </CardDescription>
-            </CardContent>
-          </Card>
+      {/* Information Cards Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Conheça nossa APM
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Entenda como trabalhamos para melhorar a educação
+            </p>
+          </div>
 
-          <Card>
-            <CardHeader className="pb-3">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-full bg-apm-donation-green/10 flex items-center justify-center">
-                  <Heart className="w-5 h-5 text-apm-donation-green" />
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="hover:shadow-lg transition-shadow border-apm-light-blue/50">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 rounded-full bg-apm-primary/10 flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8 text-apm-primary" />
                 </div>
-                <div>
-                  <CardTitle className="text-lg">Como suas doações ajudam</CardTitle>
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-sm leading-relaxed">
-                Suas contribuições são fundamentais para melhorias na infraestrutura, 
-                aquisição de materiais didáticos, equipamentos tecnológicos e realização 
-                de atividades extracurriculares que enriquecem a experiência educacional.
-              </CardDescription>
-            </CardContent>
-          </Card>
+                <CardTitle className="text-2xl text-apm-primary">O que é a APM?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base leading-relaxed text-center">
+                  A Associação de Pais e Mestres é uma organização que une famílias e educadores 
+                  para melhorar a qualidade da educação em nossa escola. Trabalhamos juntos para 
+                  proporcionar um ambiente de aprendizado ainda melhor para nossos alunos.
+                </CardDescription>
+              </CardContent>
+            </Card>
 
-          <Card>
-            <CardHeader className="pb-3">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center">
-                  <Target className="w-5 h-5 text-primary" />
+            <Card className="hover:shadow-lg transition-shadow border-apm-light-blue/50">
+              <CardHeader className="text-center pb-4">
+                <div className="w-16 h-16 rounded-full bg-apm-donation-green/10 flex items-center justify-center mx-auto mb-4">
+                  <Heart className="w-8 h-8 text-apm-donation-green" />
                 </div>
-                <div>
-                  <CardTitle className="text-lg">O que você encontra no app</CardTitle>
+                <CardTitle className="text-2xl text-apm-primary">Como suas doações ajudam</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base leading-relaxed text-center">
+                  Suas contribuições são fundamentais para melhorias na infraestrutura, 
+                  aquisição de materiais didáticos, equipamentos tecnológicos e realização 
+                  de atividades extracurriculares que enriquecem a experiência educacional.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-apm-light-blue/50">
+              <CardHeader className="text-center pb-4">
+                <div className="w-24 h-24 rounded-full bg-apm-accent/10 flex items-center justify-center mx-auto mb-4">
+                  <img src={appImage} alt="App DOE APM" className="w-16 h-16 object-contain" />
                 </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-sm leading-relaxed">
-                • Acompanhe suas doações pessoais{"\n"}
-                • Visualize o histórico completo de arrecadações{"\n"}
-                • Veja como os recursos são utilizados{"\n"}
-                • Mantenha-se informado sobre nossas atividades
-              </CardDescription>
-            </CardContent>
-          </Card>
+                <CardTitle className="text-2xl text-apm-primary">O que você encontra no app</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base leading-relaxed text-center">
+                  • Acompanhe suas doações pessoais{"\n"}
+                  • Visualize o histórico completo de arrecadações{"\n"}
+                  • Veja como os recursos são utilizados{"\n"}
+                  • Mantenha-se informado sobre nossas atividades
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Contact Footer */}
+      <footer className="bg-apm-primary text-white py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold mb-4">Entre em contato conosco</h3>
+            <p className="text-xl opacity-90">
+              Estamos sempre disponíveis para esclarecer suas dúvidas
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <div className="flex items-center justify-center space-x-4 bg-white/10 rounded-xl p-6 hover:bg-white/20 transition-colors">
+              <Mail className="w-8 h-8" />
+              <div className="text-left">
+                <h4 className="text-lg font-semibold">Email</h4>
+                <p className="text-white/90">contato@doeapm.edu.br</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center justify-center space-x-4 bg-white/10 rounded-xl p-6 hover:bg-white/20 transition-colors">
+              <Phone className="w-8 h-8" />
+              <div className="text-left">
+                <h4 className="text-lg font-semibold">Telefone</h4>
+                <p className="text-white/90">(11) 9999-9999</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/20 text-center">
+          <p className="text-white/80">
+            © 2024 DOE APM. Todos os direitos reservados.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

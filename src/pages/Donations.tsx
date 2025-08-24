@@ -61,8 +61,9 @@ export default function Donations() {
               <Heart className="w-8 h-8 text-muted-foreground" />
             </div>
             <h2 className="text-xl font-bold mb-2">Acesso Restrito</h2>
-            <p className="text-muted-foreground text-sm">
-              Para visualizar suas doações, é necessário fazer login com seus dados pessoais.
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Esta seção está restrita para usuários identificados. Faça login para visualizar suas doações pessoais.
+              Se você não tem um cadastro no nosso app, entre em contato conosco para solicitar um.
             </p>
           </CardContent>
         </Card>

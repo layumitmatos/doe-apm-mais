@@ -7,7 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { School, Plus, ArrowLeft, TrendingUp, TrendingDown } from "lucide-react";
+import logoImage from "@/assets/logo.png";
+import { ArrowLeft, Plus, TrendingUp, TrendingDown } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 import { useToast } from "@/hooks/use-toast";
 
@@ -100,7 +101,7 @@ export default function AdminHistory() {
           </Button>
           
           <div className="flex items-center">
-            <School className="w-6 h-6 mr-2" />
+            <img src={logoImage} alt="DOE APM Logo" className="h-8 w-auto mr-2" />
             <h1 className="text-xl font-bold">Histórico de Doações</h1>
           </div>
         </div>
@@ -126,6 +127,22 @@ export default function AdminHistory() {
             <div className="text-xs text-muted-foreground mt-1">
               Atualizado em {new Date().toLocaleDateString('pt-BR')}
             </div>
+            <div className="text-xs text-muted-foreground mt-1">
+              Responsável: Admin Sistema
+            </div>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="mt-3"
+              onClick={() => {
+                toast({
+                  title: "Saldo alterado",
+                  description: "Funcionalidade disponível apenas com backend real"
+                });
+              }}
+            >
+              Alterar Saldo
+            </Button>
           </CardContent>
         </Card>
 
