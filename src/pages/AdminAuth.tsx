@@ -109,7 +109,7 @@ export default function AdminAuth() {
                       
                       <Button 
                         type="submit" 
-                        className="w-full h-12 bg-apm-primary hover:bg-apm-primary/90 text-white rounded-lg font-medium"
+                        className="w-full h-12 bg-[#4741A6] hover:bg-[#4741A6]/90 text-white rounded-lg font-medium"
                       >
                         Entrar
                       </Button>
@@ -159,7 +159,7 @@ export default function AdminAuth() {
                       
                       <Button 
                         type="submit" 
-                        className="w-full h-12 bg-apm-primary hover:bg-apm-primary/90 text-white rounded-lg font-medium"
+                        className="w-full h-12 bg-[#4741A6] hover:bg-[#4741A6]/90 text-white rounded-lg font-medium"
                       >
                         Cadastrar
                       </Button>

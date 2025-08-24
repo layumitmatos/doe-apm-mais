@@ -89,21 +89,20 @@ export default function AdminHistory() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-primary text-primary-foreground p-4">
-        <div className="flex items-center justify-between">
+      <div className="bg-[#4741A6] text-white p-4">
+        <div className="flex items-center justify-center">
+          <img src={logoImage} alt="DOE APM Logo" className="h-8 w-auto mr-2" />
+          <h1 className="text-xl font-bold">Histórico de Doações</h1>
+        </div>
+        <div className="flex justify-start mt-2">
           <Button 
             variant="ghost" 
             onClick={() => navigate('/admin/dashboard')}
-            className="text-primary-foreground hover:bg-primary-foreground/10"
+            className="text-white hover:bg-white/10"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Voltar
           </Button>
-          
-          <div className="flex items-center">
-            <img src={logoImage} alt="DOE APM Logo" className="h-8 w-auto mr-2" />
-            <h1 className="text-xl font-bold">Histórico de Doações</h1>
-          </div>
         </div>
       </div>
 

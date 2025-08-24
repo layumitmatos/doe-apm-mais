@@ -9,16 +9,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-apm-light-blue to-white">
       {/* Header */}
-      <header className="bg-white shadow-sm py-4 px-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <header className="bg-[#4741A6] shadow-sm py-4 px-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-center">
           <img src={logoImage} alt="DOE APM Logo" className="h-12 w-auto" />
-          <Button 
-            onClick={() => window.location.href = '/admin/auth'}
-            className="bg-apm-primary hover:bg-apm-primary/90 text-white px-6 py-2"
-          >
-            <Users className="w-4 h-4 mr-2" />
-            Sou membro da APM
-          </Button>
         </div>
       </header>
 
@@ -32,18 +25,10 @@ export default function Home() {
             <p className="text-xl text-muted-foreground">
               Associação de Pais e Mestres - Transformando a educação juntos
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex justify-center">
               <Button 
-                size="lg" 
-                className="bg-apm-primary hover:bg-apm-primary/90 text-white px-8 py-3"
-                onClick={() => window.location.href = '/login'}
-              >
-                Fazer Login
-              </Button>
-              <Button 
-                variant="outline" 
                 size="lg"
-                className="border-apm-primary text-apm-primary hover:bg-apm-primary/10 px-8 py-3"
+                className="bg-[#4741A6] hover:bg-[#4741A6]/90 text-white px-8 py-3"
                 onClick={() => window.location.href = '/admin/auth'}
               >
                 <Users className="w-4 h-4 mr-2" />
@@ -125,36 +110,36 @@ export default function Home() {
       </section>
 
       {/* Contact Footer */}
-      <footer className="bg-apm-primary text-white py-16">
+      <footer className="bg-gray-100 text-black py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-4">Entre em contato conosco</h3>
-            <p className="text-xl opacity-90">
+            <p className="text-xl">
               Estamos sempre disponíveis para esclarecer suas dúvidas
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            <div className="flex items-center justify-center space-x-4 bg-white/10 rounded-xl p-6 hover:bg-white/20 transition-colors">
-              <Mail className="w-8 h-8" />
+            <div className="flex items-center justify-center space-x-4 bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <Mail className="w-8 h-8 text-[#4741A6]" />
               <div className="text-left">
                 <h4 className="text-lg font-semibold">Email</h4>
-                <p className="text-white/90">contato@doeapm.edu.br</p>
+                <p className="text-gray-700">contato@doeapm.edu.br</p>
               </div>
             </div>
             
-            <div className="flex items-center justify-center space-x-4 bg-white/10 rounded-xl p-6 hover:bg-white/20 transition-colors">
-              <Phone className="w-8 h-8" />
+            <div className="flex items-center justify-center space-x-4 bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <Phone className="w-8 h-8 text-[#4741A6]" />
               <div className="text-left">
                 <h4 className="text-lg font-semibold">Telefone</h4>
-                <p className="text-white/90">(11) 9999-9999</p>
+                <p className="text-gray-700">(11) 9999-9999</p>
               </div>
             </div>
           </div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/20 text-center">
-          <p className="text-white/80">
+        <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-300 text-center">
+          <p className="text-gray-600">
             © 2024 DOE APM. Todos os direitos reservados.
           </p>
         </div>

@@ -52,10 +52,10 @@ export default function Login() {
           <div className="w-full max-w-md space-y-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold text-foreground mb-2">
-                Holla, Welcome Back
+                Bem-vindo à APM
               </h2>
               <p className="text-muted-foreground">
-                Hey, welcome back to your special place
+                Gerencie suas doações de forma fácil e rápida
               </p>
             </div>
 
@@ -100,9 +100,9 @@ export default function Login() {
                   
                   <Button 
                     type="submit" 
-                    className="w-full h-12 bg-apm-primary hover:bg-apm-primary/90 text-white rounded-lg font-medium"
+                    className="w-full h-12 bg-[#4741A6] hover:bg-[#4741A6]/90 text-white rounded-lg font-medium"
                   >
-                    Sign In
+                    Entrar
                   </Button>
                 </form>
                 
@@ -122,10 +122,6 @@ export default function Login() {
                 >
                   Entrar sem me identificar
                 </Button>
-
-                <p className="text-center text-sm text-muted-foreground mt-6">
-                  Don't have an account? <span className="text-apm-primary cursor-pointer hover:underline">Sign Up</span>
-                </p>
               </CardContent>
             </Card>
           </div>

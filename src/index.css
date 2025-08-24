@@ -41,6 +41,7 @@ All colors MUST be HSL.
     --apm-expense-navy: 220 50% 35%;
     --apm-primary: 220 60% 65%; /* #9BBBFC */
     --apm-accent: 45 85% 70%; /* #F9CE69 */
+    --apm-header: 245 63% 46%; /* #4741A6 */
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--apm-primary)), hsl(var(--apm-light-blue)));
