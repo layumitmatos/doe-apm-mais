@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAdmin } from "@/contexts/AdminContext";
 import { useNavigate } from 'react-router-dom';
 import { useToast } from "@/hooks/use-toast";
@@ -16,12 +15,6 @@ export default function AdminAuth() {
   const { toast } = useToast();
   
   const [loginData, setLoginData] = useState({
-    email: '',
-    password: ''
-  });
-  
-  const [registerData, setRegisterData] = useState({
-    name: '',
     email: '',
     password: ''
   });
@@ -44,22 +37,10 @@ export default function AdminAuth() {
     }
   };
 
-  const handleRegister = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const success = await loginAdmin(registerData.email, registerData.password, registerData.name);
-    if (success) {
-      toast({
-        title: "Cadastro realizado com sucesso!",
-        description: `Bem-vindo, ${registerData.name}!`
-      });
-      navigate('/admin/dashboard');
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-apm-light-blue via-white to-apm-primary/10">
       <div className="grid lg:grid-cols-2 min-h-screen">
-        {/* Left side - Auth Form */}
+        {/* Left side - Login Form */}
         <div className="flex items-center justify-center p-8">
           <div className="w-full max-w-md space-y-8">
             <div className="text-center">
@@ -73,99 +54,40 @@ export default function AdminAuth() {
 
             <Card className="shadow-lg border-0">
               <CardContent className="p-8">
-                <Tabs defaultValue="login" className="w-full">
-                  <TabsList className="grid w-full grid-cols-2 mb-6">
-                    <TabsTrigger value="login">Login</TabsTrigger>
-                    <TabsTrigger value="register">Cadastro</TabsTrigger>
-                  </TabsList>
-
-                  <TabsContent value="login">
-                    <form onSubmit={handleLogin} className="space-y-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="email" className="text-sm font-medium">Email</Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          placeholder="Digite seu email"
-                          value={loginData.email}
-                          onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
-                          className="h-12 px-4 rounded-lg border-gray-200 focus:border-apm-primary focus:ring-apm-primary"
-                          required
-                        />
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="password" className="text-sm font-medium">Senha</Label>
-                        <Input
-                          id="password"
-                          type="password"
-                          placeholder="Digite sua senha"
-                          value={loginData.password}
-                          onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
-                          className="h-12 px-4 rounded-lg border-gray-200 focus:border-apm-primary focus:ring-apm-primary"
-                          required
-                        />
-                      </div>
-                      
-                      <Button 
-                        type="submit" 
-                        className="w-full h-12 bg-[#4741A6] hover:bg-[#4741A6]/90 text-white rounded-lg font-medium"
-                      >
-                        Entrar
-                      </Button>
-                    </form>
-                  </TabsContent>
-
-                  <TabsContent value="register">
-                    <form onSubmit={handleRegister} className="space-y-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="name" className="text-sm font-medium">Nome Completo</Label>
-                        <Input
-                          id="name"
-                          type="text"
-                          placeholder="Digite seu nome completo"
-                          value={registerData.name}
-                          onChange={(e) => setRegisterData({ ...registerData, name: e.target.value })}
-                          className="h-12 px-4 rounded-lg border-gray-200 focus:border-apm-primary focus:ring-apm-primary"
-                          required
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="reg-email" className="text-sm font-medium">Email</Label>
-                        <Input
-                          id="reg-email"
-                          type="email"
-                          placeholder="Digite seu email"
-                          value={registerData.email}
-                          onChange={(e) => setRegisterData({ ...registerData, email: e.target.value })}
-                          className="h-12 px-4 rounded-lg border-gray-200 focus:border-apm-primary focus:ring-apm-primary"
-                          required
-                        />
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="reg-password" className="text-sm font-medium">Senha</Label>
-                        <Input
-                          id="reg-password"
-                          type="password"
-                          placeholder="Digite sua senha"
-                          value={registerData.password}
-                          onChange={(e) => setRegisterData({ ...registerData, password: e.target.value })}
-                          className="h-12 px-4 rounded-lg border-gray-200 focus:border-apm-primary focus:ring-apm-primary"
-                          required
-                        />
-                      </div>
-                      
-                      <Button 
-                        type="submit" 
-                        className="w-full h-12 bg-[#4741A6] hover:bg-[#4741A6]/90 text-white rounded-lg font-medium"
-                      >
-                        Cadastrar
-                      </Button>
-                    </form>
-                  </TabsContent>
-                </Tabs>
+                <form onSubmit={handleLogin} className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-sm font-medium">Email</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="Digite seu email"
+                      value={loginData.email}
+                      onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
+                      className="h-12 px-4 rounded-lg border-gray-200 focus:border-apm-primary focus:ring-apm-primary"
+                      required
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="password" className="text-sm font-medium">Senha</Label>
+                    <Input
+                      id="password"
+                      type="password"
+                      placeholder="Digite sua senha"
+                      value={loginData.password}
+                      onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
+                      className="h-12 px-4 rounded-lg border-gray-200 focus:border-apm-primary focus:ring-apm-primary"
+                      required
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full h-12 bg-[#729DF2] hover:bg-[#729DF2]/90 text-white rounded-lg font-medium"
+                  >
+                    Entrar
+                  </Button>
+                </form>
               </CardContent>
             </Card>
           </div>

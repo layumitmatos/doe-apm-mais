@@ -17,10 +17,10 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-[#4741A6] text-white p-4">
+      <div className="bg-[#185fc9] text-white p-4">
         <div className="flex items-center justify-center">
-          <img src={logoImage} alt="DOE APM Logo" className="h-8 w-auto mr-2" />
-          <h1 className="text-xl font-bold">Painel Administrativo</h1>
+         
+          <h1 className=" text-center text-xl font-bold">Painel Administrativo</h1>
         </div>
         <div className="flex justify-end mt-2">
           <Button
@@ -49,7 +49,7 @@ export default function AdminDashboard() {
         {/* Admin Options */}
         <div className="grid gap-4 max-w-2xl mx-auto">
           <Card className="hover:shadow-md transition-shadow cursor-pointer"
-                onClick={() => navigate('/admin/history')}>
+            onClick={() => navigate('/admin/history')}>
             <CardHeader className="pb-3">
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -62,14 +62,14 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Visualize, adicione e gerencie todas as transações de entrada e saída da APM. 
+                Visualize, adicione e gerencie todas as transações de entrada e saída da APM.
                 Controle completo sobre o histórico financeiro.
               </p>
             </CardContent>
           </Card>
 
           <Card className="hover:shadow-md transition-shadow cursor-pointer"
-                onClick={() => navigate('/admin/register-donor')}>
+            onClick={() => navigate('/admin/register-donor')}>
             <CardHeader className="pb-3">
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center">
@@ -82,11 +82,35 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Adicione novos doadores ao sistema com informações completas. 
+                Adicione novos doadores ao sistema com informações completas.
                 Mantenha um registro organizado de todos os contribuintes.
               </p>
             </CardContent>
           </Card>
+
+
+          <Card className="hover:shadow-md transition-shadow cursor-pointer"
+            onClick={() => navigate('/admin/register-adm')}>
+            <CardHeader className="pb-3">
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center">
+                  <UserPlus className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <CardTitle className="text-lg">Cadastrar um ADM</CardTitle>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Adicione novos administradores ao sistema com informações completas.
+                Mantenha um registro organizado de todos os contribuintes.
+              </p>
+            </CardContent>
+          </Card>
+
+
+
         </div>
       </div>
     </div>

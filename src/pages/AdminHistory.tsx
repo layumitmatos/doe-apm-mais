@@ -89,9 +89,8 @@ export default function AdminHistory() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-[#4741A6] text-white p-4">
+      <div className="bg-[#185fc9] text-white p-4">
         <div className="flex items-center justify-center">
-          <img src={logoImage} alt="DOE APM Logo" className="h-8 w-auto mr-2" />
           <h1 className="text-xl font-bold">Histórico de Doações</h1>
         </div>
         <div className="flex justify-start mt-2">

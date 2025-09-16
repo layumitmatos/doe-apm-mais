@@ -3,33 +3,33 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ArrowLeft, UserPlus } from "lucide-react";
+import { ArrowLeft, UserCog } from "lucide-react";
 import logoImage from "@/assets/logo.png";
 import { useNavigate } from 'react-router-dom';
 import { useToast } from "@/hooks/use-toast";
 
-export default function RegisterDonor() {
+export default function RegisterADM() {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    document: ''
+    password: ''
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     // Simulação de cadastro
     setTimeout(() => {
       toast({
-        title: "Doador cadastrado com sucesso!",
+        title: "Administrador cadastrado com sucesso!",
         description: `${formData.name} foi adicionado ao sistema.`
       });
-      
-      setFormData({ name: '', email: '', document: '' });
+
+      setFormData({ name: '', email: '', password: '' });
       setIsLoading(false);
     }, 1000);
   };
@@ -39,8 +39,8 @@ export default function RegisterDonor() {
       {/* Header */}
       <div className="bg-[#185fc9] text-white p-4">
         <div className="flex items-center justify-center">
-         
-          <h1 className="text-xl font-bold">Cadastrar Doador</h1>
+      
+          <h1 className="text-xl font-bold">Cadastrar ADM</h1>
         </div>
         <div className="flex justify-start mt-2">
           <Button 
@@ -59,9 +59,9 @@ export default function RegisterDonor() {
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
             <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <UserPlus className="w-8 h-8 text-primary" />
+              <UserCog className="w-8 h-8 text-primary" />
             </div>
-            <CardTitle className="text-2xl text-primary">Novo Doador</CardTitle>
+            <CardTitle className="text-2xl text-primary">Novo Administrador</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -76,7 +76,7 @@ export default function RegisterDonor() {
                   required
                 />
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
@@ -88,21 +88,21 @@ export default function RegisterDonor() {
                   required
                 />
               </div>
-              
+
               <div className="space-y-2">
-                <Label htmlFor="document">Documento (CPF/CNPJ)</Label>
+                <Label htmlFor="password">Senha</Label>
                 <Input
-                  id="document"
-                  type="text"
-                  placeholder="Digite o CPF ou CNPJ"
-                  value={formData.document}
-                  onChange={(e) => setFormData(prev => ({ ...prev, document: e.target.value }))}
+                  id="password"
+                  type="password"
+                  placeholder="Digite a senha"
+                  value={formData.password}
+                  onChange={(e) => setFormData(prev => ({ ...prev, password: e.target.value }))}
                   required
                 />
               </div>
-              
+
               <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Cadastrando..." : "Cadastrar Doador"}
+                {isLoading ? "Cadastrando..." : "Cadastrar ADM"}
               </Button>
             </form>
           </CardContent>

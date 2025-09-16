@@ -10,6 +10,7 @@ import { AdminProvider } from "@/contexts/AdminContext";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+
 import History from "./pages/History";
 import Donations from "./pages/Donations";
 import Profile from "./pages/Profile";
@@ -17,6 +18,7 @@ import AdminAuth from "./pages/AdminAuth";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminHistory from "./pages/AdminHistory";
 import RegisterDonor from "./pages/RegisterDonor";
+import RegisterADM from "./pages/RegisterADM"; 
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,7 +32,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             {/* Admin routes */}
-            <Route path="/admin/auth" element={<AdminAuth />} />
+            <Route path="/admin/auth" element={<AdminAuth />} />         
             <Route path="/admin/dashboard" element={
               <AdminGuard>
                 <AdminDashboard />
@@ -44,6 +46,11 @@ const App = () => (
             <Route path="/admin/register-donor" element={
               <AdminGuard>
                 <RegisterDonor />
+              </AdminGuard>
+            } />
+            <Route path="/admin/register-adm" element={ 
+              <AdminGuard>
+                <RegisterADM />
               </AdminGuard>
             } />
             

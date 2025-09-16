@@ -1,6 +1,5 @@
 import { Slideshow } from "@/components/Slideshow";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { School, Users, Heart, Target, Mail, Phone } from "lucide-react";
 import appImage from "@/assets/app.png";
 import logoImage from "@/assets/logo.png";
@@ -9,9 +8,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-apm-light-blue to-white">
       {/* Header */}
-      <header className="bg-[#4741A6] shadow-sm py-4 px-6">
+      <header className="bg-[#185fc9] shadow-sm py-4 px-6">
         <div className="max-w-7xl mx-auto flex items-center justify-center">
-          <img src={logoImage} alt="DOE APM Logo" className="h-12 w-auto" />
+          <img src={logoImage} alt="DOE APM Logo" className=" h-13 w-auto" />
         </div>
       </header>
 
@@ -25,16 +24,7 @@ export default function Home() {
             <p className="text-xl text-muted-foreground">
               Associação de Pais e Mestres - Transformando a educação juntos
             </p>
-            <div className="flex justify-center">
-              <Button 
-                size="lg"
-                className="bg-[#4741A6] hover:bg-[#4741A6]/90 text-white px-8 py-3"
-                onClick={() => window.location.href = '/admin/auth'}
-              >
-                <Users className="w-4 h-4 mr-2" />
-                Sou membro da APM
-              </Button>
-            </div>
+
           </div>
           <div className="relative">
             <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
@@ -66,8 +56,8 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed text-center">
-                  A Associação de Pais e Mestres é uma organização que une famílias e educadores 
-                  para melhorar a qualidade da educação em nossa escola. Trabalhamos juntos para 
+                  A Associação de Pais e Mestres é uma organização que une famílias e educadores
+                  para melhorar a qualidade da educação em nossa escola. Trabalhamos juntos para
                   proporcionar um ambiente de aprendizado ainda melhor para nossos alunos.
                 </CardDescription>
               </CardContent>
@@ -82,8 +72,8 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-base leading-relaxed text-center">
-                  Suas contribuições são fundamentais para melhorias na infraestrutura, 
-                  aquisição de materiais didáticos, equipamentos tecnológicos e realização 
+                  Suas contribuições são fundamentais para melhorias na infraestrutura,
+                  aquisição de materiais didáticos, equipamentos tecnológicos e realização
                   de atividades extracurriculares que enriquecem a experiência educacional.
                 </CardDescription>
               </CardContent>
@@ -97,12 +87,16 @@ export default function Home() {
                 <CardTitle className="text-2xl text-apm-primary">O que você encontra no app</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base leading-relaxed text-center">
-                  • Acompanhe suas doações pessoais{"\n"}
-                  • Visualize o histórico completo de arrecadações{"\n"}
-                  • Veja como os recursos são utilizados{"\n"}
-                  • Mantenha-se informado sobre nossas atividades
-                </CardDescription>
+<CardDescription className="text-base leading-relaxed px-8">
+  <ul className="list-disc list-inside text-left mx-auto w-fit">
+    <li>Acompanhe suas doações pessoais</li>
+    <li>Visualize o histórico completo de arrecadações</li>
+    <li>Veja como os recursos são utilizados</li>
+    <li>Mantenha-se informado sobre nossas atividades</li>
+  </ul>
+</CardDescription>
+
+                
               </CardContent>
             </Card>
           </div>
@@ -118,7 +112,7 @@ export default function Home() {
               Estamos sempre disponíveis para esclarecer suas dúvidas
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
             <div className="flex items-center justify-center space-x-4 bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
               <Mail className="w-8 h-8 text-[#4741A6]" />
@@ -127,7 +121,7 @@ export default function Home() {
                 <p className="text-gray-700">contato@doeapm.edu.br</p>
               </div>
             </div>
-            
+
             <div className="flex items-center justify-center space-x-4 bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
               <Phone className="w-8 h-8 text-[#4741A6]" />
               <div className="text-left">
@@ -137,7 +131,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-300 text-center">
           <p className="text-gray-600">
             © 2024 DOE APM. Todos os direitos reservados.

@@ -30,7 +30,7 @@ export const Slideshow = () => {
   };
 
   return (
-    <div className="relative w-full h-48 rounded-lg overflow-hidden">
+    <div className="relative w-full h-64 rounded-lg overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 z-10" />
       
       {slides.map((slide, index) => (

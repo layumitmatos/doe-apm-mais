@@ -58,11 +58,11 @@ export default function Profile() {
               </p>
               
               <div className="space-y-3">
-                <Button onClick={handleLogin} className="w-full">
+                <Button onClick={handleLogin} className=" bg-[#729DF2] w-full ">
                   <UserCheck className="w-4 h-4 mr-2" />
                   Fazer Login
                 </Button>
-                <Button variant="outline" onClick={handleLogout} className="w-full">
+                <Button variant="outline" onClick={handleLogout} className="w-full  hover:bg-[#729DF2] hover:text-white">
                   <LogOut className="w-4 h-4 mr-2" />
                   Sair do modo anônimo
                 </Button>

@@ -100,7 +100,7 @@ export default function Login() {
                   
                   <Button 
                     type="submit" 
-                    className="w-full h-12 bg-[#4741A6] hover:bg-[#4741A6]/90 text-white rounded-lg font-medium"
+                    className="w-full h-12 bg-[#729DF2] hover:bg-[#729DF2]/90 text-white rounded-lg font-medium"
                   >
                     Entrar
                   </Button>
@@ -115,9 +115,15 @@ export default function Login() {
                   </div>
                 </div>
                 
+                <Button variant="outline" onClick={() => navigate("/admin/auth")} className="relative my-2 w-full h-12 hover:bg-[#729DF2] hover:text-white rounded-lg font-medium" >
+                Sou ADM
+              </Button>
+
+
+            
                 <Button 
                   variant="outline" 
-                  className="w-full h-12 border-gray-200 hover:bg-gray-50 rounded-lg"
+                  className="w-full h-12 hover:bg-[#729DF2] hover:text-white rounded-lg font-medium"
                   onClick={handleAnonymousLogin}
                 >
                   Entrar sem me identificar
@@ -142,7 +148,7 @@ export default function Login() {
               />
             </div>
             
-            <div className="space-y-4 text-white">
+            <div className="space-y-4 text-black">
               <h3 className="text-2xl font-bold">
                 Bem-vindo ao DOE APM!
               </h3>
