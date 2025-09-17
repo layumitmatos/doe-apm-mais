@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import logoImage from "@/assets/logo.png";
-import img1Image from "@/assets/img1.png";
+import img1Image from "@/assets/inicio.png";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Login() {
@@ -144,16 +144,17 @@ export default function Login() {
               <img 
                 src={img1Image} 
                 alt="Education Illustration" 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain "
+                
               />
             </div>
             
             <div className="space-y-4 text-black">
               <h3 className="text-2xl font-bold">
-                Bem-vindo ao DOE APM!
+                APM Digital
               </h3>
               <p className="text-lg opacity-90 max-w-md mx-auto">
-                Gerencie suas doações de forma fácil e rápida
+                Gestão transparente de doações
               </p>
             </div>
           </div>

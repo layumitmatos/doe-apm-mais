@@ -1,6 +1,6 @@
 import { Slideshow } from "@/components/Slideshow";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { School, Users, Heart, Target, Mail, Phone } from "lucide-react";
+import { Users, Heart, Mail, Phone } from "lucide-react";
 import appImage from "@/assets/app.png";
 import logoImage from "@/assets/logo.png";
 
@@ -8,14 +8,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-apm-light-blue to-white">
       {/* Header */}
-      <header className="bg-[#185fc9] shadow-sm py-4 px-6">
+      <header className="bg-gradient-to-r from-apm-light-blue to-apm-primary shadow-sm py-4 px-6">
         <div className="max-w-7xl mx-auto flex items-center justify-center">
           <img src={logoImage} alt="DOE APM Logo" className=" h-13 w-auto" />
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-apm-light-blue to-apm-primary/20 py-20">
+      <section className="bg-gray-200 py-20">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-5xl font-bold text-foreground leading-tight">
@@ -104,7 +104,7 @@ export default function Home() {
       </section>
 
       {/* Contact Footer */}
-      <footer className="bg-gray-100 text-black py-16">
+      <footer className="bg-gray-200 text-black py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-4">Entre em contato conosco</h3>

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import schoolSlide1 from "@/assets/school-slide-1.jpg";
-import schoolSlide2 from "@/assets/school-slide-2.jpg";
-import schoolSlide3 from "@/assets/school-slide-3.jpg";
+import schoolSlide1 from "@/assets/sala1.jpeg";
+import schoolSlide2 from "@/assets/sala2.jpeg";
+import schoolSlide3 from "@/assets/sala3.jpeg";
 
 const slides = [
   { image: schoolSlide1, alt: "Escola - Ambiente Exterior" },
@@ -44,6 +44,7 @@ export const Slideshow = () => {
             src={slide.image}
             alt={slide.alt}
             className="w-full h-full object-cover"
+            style={{ objectPosition: '50% 70%' }}
           />
         </div>
       ))}
